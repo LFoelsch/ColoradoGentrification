@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Coordinated Multivariate Visualization</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Leaflet -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"> -->
+  <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+  <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- D3.js -->
+  <link rel="stylesheet" href="css/d3.parcoords.css">
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="js/d3.parcoords.js"></script>
+  <script src="js/colorbrewer.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-default">
+  <div class="container container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="H:\SecondYear\Spring19\GeoViz\GitHub\lfoelsch-master\ColoradoGentrification\index.html">Home</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<div style="height:0px;" id="info-label" class="col-md-6 portfolio-item"></div>
+
+<!-- Page Content -->
+<div class="container">
+
+<!-- Page Header -->
+
+<div class="panel panel-default">
+<div class="panel-body">
+	<div class="row panel-header">
+		<div class="col-lg-12">
+			<h1 class="page-header">Gentrification Related Demographic Changes in Denver, CO 2000 - 2013</h1>
+		</div>
+	</div>
+	<div class="row">
+	  <div class="col-lg-9">
+		<p>This map displays four variables over Census block groups in Denver, CO. All values represent the percent change of that variable in that block group from the year 2000 to the year 2013. The first three variables are indicators
+    used in a 2016 study published by Denver's own Office of Economic Development to determine whether an area had experienced gentrification related demographic change. </p>
+
+    <ul>
+      <li>The first variable, <b>PCTCHGHIED</b>, or "Percent Change in Higher Education," represents the percent change of the population in that block group with a bachelor's degree or higher from 2000 to 2013. This metric is a commonly used indicator of gentrification. </li>
+      <li>The second variable, <b>InvPctRnt</b>, or "Inverse Percent Change in Renter Occupied Housing Units," is the inverse percent change in renter-occupied housing units from 2000 to 2013. A decrease in percent of renter-occupied units is an indicator of gentrification, and this variable was inversed so that all variables would be positive correlates with gentrification.</li>
+      <li>The third variable, <b>MHHIPCTCHG</b>, or "Median Household Income Percent Change," is the percent change in block groups median household income from 2000 to 2013. This metric is necessary to determine one of the key aspects of gentriification: an influx of wealthier residents.</li>
+      <li> The fourth variable, <b>Gentpctsum</b>, of "Gentrification Percents Sum," is the sum of the three previously described values. As an aggregated value of all three metrics used, it can be considered as an overall "gentrification intensity" value.
+    </ul>
+
+    <p></p>
+	  </div>
+	  <div class="col-lg-2">
+        <div class="row">
+		        <div id="legend"></div>
+            <br><br>
+	  </div>
+
+	</div>
+	  <!-- /.row -->
+
+	  <!-- /.row -->
+	  <!-- Projects Row -->
+	  <div class="row">
+		<div class="col-lg-12">
+		  <div class="col-md-12 portfolio-item">
+			<div id="map"/>
+		  </div>
+		</div>
+	  </div>
+	  <!-- /.row -->
+
+    <br style="margin-top:10px;">
+
+	  <!-- Projects Row -->
+	  <div class="row">
+		<div class="col-lg-12 portfolio-item">
+		  <div class="col-md-12 portfolio-item">
+			<div id="pcp" class="parcoords"/>
+		  </div>
+		</div>
+	  </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <p></p>
+      </div>
+    </div>
+
+</div>
+</div>
+</div><!-- /.container -->
+
+<hr>
+<br>
+
+<!-- Footer -->
+  <footer>
+	<div class="row">
+	  <div class="col-lg-12 text-center">
+		<p>All data acquired from the Census Bureau via American FactFinder</p>
+	  </div>
+	</div>
+	<!-- /.row -->
+  </footer>
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!--link to main JavaScript file-->
+<script src="js/FinalTry.js"></script>
+
+  </body>
+
+  </html>
