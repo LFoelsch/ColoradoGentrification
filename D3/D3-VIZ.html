@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3 VIZ</title>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+	<svg width="720" height="120">
+	</svg>
+	<script>
+  // Select the Stage
+  var stage = d3.selectAll("svg");
+	// Create a dataset with some values, bind them them to rect elements
+	var myRects = stage.selectAll("rect").data([160, 220, 280, 340]);
+
+	// Append rectangles, use enter to add to the stage. D3 creates them!
+	myRects.enter()
+		.append("rect")
+		.style("fill", "firebrick")
+		.attr("y", 45)
+		.attr("x", function(d){return d;})
+		.attr("width", 30)
+		.attr("height", 30);
+  // Style the Stage background color
+  stage.style("background-color", "lightgray");
+	// Add a transition when stage element is clicked
+stage.on("click", function() {
+	d3.selectAll("rect")
+		.transition()
+		.attr("x", function(d){return d + 200;})
+		.ease(d3.easeBack);
+});
+// Add a transition when stage element is clicked
+stage.on("click", function() {
+	var position = d3.select(this).attr("class");
+	if (position == null) {
+		stage.attr("class", "moved");
+		d3.selectAll("rect")
+			.transition()
+			.attr("x", function(d){return d + 200;})
+			.ease(d3.easeBack);
+	} else {
+		stage.attr("class", null);
+		d3.selectAll("rect")
+			.transition()
+			.attr("x", function(d){return d;})
+			.ease(d3.easeBack);
+	}
+});
+// Use a dataset with fewer values through Remove
+var dataRemove = stage.selectAll("rect").data([160, 220]);
+
+// Remove values on click
+d3.selectAll("rect").on("click", function() {
+	dataRemove.exit().remove();
+});
+	</script>
+</body>
+</html>
