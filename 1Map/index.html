@@ -28,22 +28,29 @@
   <script src="js/colorbrewer.js"></script>
 
 </head>
+<div class="row panel-header">
+  <div class="col-lg-12">
+    <h1 class="page-header">Two Decades of Skyrocketing Housing Prices in Denver, CO</h1>
+  </div>
+</div>
 <div class="col-lg-9">
-<p>This map displays four variables over Census block groups in Denver, CO. All values represent the percent change of that variable in that block group from the year 2000 to the year 2013. The first three variables are indicators
-used in a 2016 study published by Denver's own Office of Economic Development to determine whether an area had experienced gentrification related demographic change. </p>
-
+<p>
+The graph below was made using real estate data acquired from Zillow's Data Research site. It depicts the change in <b>median home value per square foot</b>
+in Denver, Colorado over the last twenty years. Home value is an often-used indicator of the presence and extent of gentrification along with household income
+and demographic factors.</p>
 <ul>
-  <li>The first variable, <b>PCTCHGHIED</b>, or "Percent Change in Higher Education," represents the percent change of the population in that block group with a bachelor's degree or higher from 2000 to 2013. This metric is a commonly used indicator of gentrification. </li>
-  <li>The second variable, <b>InvPctRnt</b>, or "Inverse Percent Change in Renter Occupied Housing Units," is the inverse percent change in renter-occupied housing units from 2000 to 2013. A decrease in percent of renter-occupied units is an indicator of gentrification, and this variable was inversed so that all variables would be positive correlates with gentrification.</li>
-  <li>The third variable, <b>MHHIPCTCHG</b>, or "Median Household Income Percent Change," is the percent change in block groups median household income from 2000 to 2013. This metric is necessary to determine one of the key aspects of gentriification: an influx of wealthier residents.</li>
-  <li> The fourth variable, <b>Gentpctsum</b>, of "Gentrification Percents Sum," is the sum of the three previously described values. As an aggregated value of all three metrics used, it can be considered as an overall "gentrification intensity" value.
-</ul>
-
-<p></p>
+  <li>Denver's home value has more than quadrupled in the last two decades, with the median price per square foot going from $86 in 1996 to $363 in 2019.</li>
+  <li>Over the same time period, the median price per square foot in the entire state of Colorado increased from $86 to only $246.</li>
+  <li>This still outpaces home value in the country as a whole, with the same value for the entire country going from $64 in 1996 to only $141 in 2019.</li>
+  </ul>
+<p>While gentrification can have positive effects on a city's tax revenues, many argue the negative effects far outweigh these, particularly the displacement of low-income or minority residents.
+The visualization below demonstrates the astonishing increases in home prices in the Denver area over the past two decades and may provide some indication of the struggles faced by low-income residents
+in these areas with the increased cost of living associated with skyrocketing home values in Denver, particularly since 2012. </p>
 <div class="w3-container">
 <svg width="960" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 </div>
+
 <script>
 
 var svg = d3.select("svg"),
@@ -173,6 +180,9 @@ function type(d) {
 
 </script>
 </div>
+</style>
+
+
 <style>
 
 .area {
@@ -185,5 +195,3 @@ function type(d) {
   fill: none;
   pointer-events: all;
 }
-
-</style>
