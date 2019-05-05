@@ -50,13 +50,13 @@ var area = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { return x(d.date); })
     .y0(height)
-    .y1(function(d) { return y(d.price); });
+    .y1(function(d) { return y(d.percent); });
 
 var area2 = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { return x2(d.date); })
     .y0(height2)
-    .y1(function(d) { return y2(d.price); });
+    .y1(function(d) { return y2(d.percent); });
 
 svg.append("defs").append("clipPath")
     .attr("id", "clip")
@@ -139,7 +139,7 @@ function zoomed() {
 
 function type(d) {
   d.date = parseDate(d.date);
-  d.price = +d.price;
+  d.percent = +d.percent;
   return d;
 }
 
