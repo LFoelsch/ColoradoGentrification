@@ -72,11 +72,11 @@ var context = svg.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-d3.csv("sp500.csv", type, function(error, data) {
+d3.csv("1Map/sp500.csv", type, function(error, data) {
   if (error) throw error;
 
   x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.price; })]);
+  y.domain([0, d3.max(data, function(d) { return d.year; })]);
   x2.domain(x.domain());
   y2.domain(y.domain());
 
